@@ -4,26 +4,40 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Variable used to store vehicle speed
+    // Variables used to store vehicle speed and boost
     public float speed;
+    public float boost;
+
+    // Start is called before the first frame update
+    void Start() {
+
+        // Starts coroutines used within the vehicle
+        StartCoroutine(BoostChange());
+    }
 
     // Update is called once per frame
     void Update()
     {
+
         // Conditional statements used to determine what vehicle function to initiate
         if(!Input.GetKey("w")) {
             transform.Translate(Vector3.back * Time.deltaTime * speed);
             VelocityChange(false, 0.25f);
         }
-        
-        if (Input.GetKey("s")) {
-            VelocityChange(false, 0.8f);
+
+        if(Input.GetKey("b") && (boost >= 1f)) {
+            speed = speed + 3f;
+            boost = 0f;
         }
 
         if (Input.GetKey("w"))
         {
             transform.Translate(Vector3.back * Time.deltaTime * speed);
             VelocityChange(true, 0f);
+        }
+
+        else if (Input.GetKey("s")) {
+            VelocityChange(false, 0.8f);
         }
 
         if (Input.GetKey("a")) {
@@ -47,6 +61,15 @@ public class PlayerController : MonoBehaviour
             if (speed > 1f) {
                 speed = speed - brakingforce;
             }
+        }
+    }
+
+    // Private IEnumerator called to increment boost amount
+    private IEnumerator BoostChange() 
+    {
+        while (true) {
+            boost = boost + 0.1f;
+            yield return new WaitForSeconds(1f);
         }
     }
 }

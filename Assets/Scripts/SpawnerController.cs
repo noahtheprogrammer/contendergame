@@ -21,7 +21,7 @@ public class SpawnerController : MonoBehaviour
     IEnumerator SpawnItems() {
         while (true) {
             Instantiate(prefab);
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(0.78f);
         }
     }
 }

@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class SpawnerController : MonoBehaviour
 {
-    [SerializeField] private GameObject prefab;
+    // Private serializable object used for terrain generation
+    [SerializeField] private GameObject terrain;
+
+    // Private serializable object array used for obstacle generation
+    [SerializeField] private GameObject[] obstacles;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnItems());
+        // Starts the repeating coroutine to generate terrain
+        StartCoroutine(GenerateLand());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    IEnumerator SpawnItems() {
+    // IEnumerator called once and repeated every 0.78 seconds
+    IEnumerator GenerateLand() {
         while (true) {
-            Instantiate(prefab);
+            Instantiate(terrain);
             yield return new WaitForSeconds(0.78f);
         }
     }

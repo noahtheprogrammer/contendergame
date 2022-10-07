@@ -5,32 +5,27 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Variables used to store vehicle speed and boost
-    public float speed = 3f;
-    public float boost;
-
-    // Start is called before the first frame update
-    void Start() {
-
-    }
+    // Serializable objects used for individual player controls
+    [SerializeField] private GameObject player_one;
+    [SerializeField] private GameObject player_two;
 
     // Update is called once per frame
     void Update()
     {
+        // This if-else statement moves player one's vehicle
         if (Input.GetKey("a")) {
-            transform.Translate(Vector3.left * Time.deltaTime);
+            player_one.transform.Translate(Vector3.left * Time.deltaTime * 2f);
         }
         else if (Input.GetKey("d")) {
-            transform.Translate(Vector3.left * Time.deltaTime);
+            player_one.transform.Translate(Vector3.right * Time.deltaTime * 2f);
         }
-    }
 
-    // Private IEnumerator called to increment boost amount
-    private IEnumerator BoostChange() 
-    {
-        while (true) {
-            boost = boost + 0.1f;
-            yield return new WaitForSeconds(1f);
+        // This if-else statement moves player two's vehicle
+        if (Input.GetKey(KeyCode.LeftArrow)) {
+            player_two.transform.Translate(Vector3.left * Time.deltaTime * 2f);
+        }
+        else if (Input.GetKey(KeyCode.RightArrow)) {
+            player_two.transform.Translate(Vector3.right * Time.deltaTime * 2f);
         }
     }
 }

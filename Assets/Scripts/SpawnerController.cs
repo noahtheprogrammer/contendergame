@@ -13,15 +13,18 @@ public class SpawnerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Starts the repeating coroutine to generate terrain
+        // Starts the repeating coroutine to generate terrain and obstacles
         StartCoroutine(GenerateLand());
     }
 
     // IEnumerator called once and repeated every 0.78 seconds
     IEnumerator GenerateLand() {
+        int i = 0;
         while (true) {
             Instantiate(terrain);
+            Instantiate(obstacles[i], new Vector3(Random.Range(-2,2), 0.44f, -92), Quaternion.identity);
             yield return new WaitForSeconds(0.78f);
+            // i = Random.Range();
         }
     }
 }

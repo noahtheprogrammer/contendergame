@@ -7,12 +7,6 @@ public class TerrainController : MonoBehaviour
     // Private object used to access the player controller
     private PlayerController player_controller;
 
-    // Start is called before the first frame update
-    void Start() 
-    {
-        player_controller = GameObject.Find("Players").GetComponent<PlayerController>();
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -32,7 +26,6 @@ public class TerrainController : MonoBehaviour
 
         // Checks if the players interact with an obstacle
         if (other.CompareTag("Player")) {
-            player_controller.remaining_players = player_controller.remaining_players - 1;
             Destroy(other.gameObject);
             GetComponent<Animator>().Play("explode");
         }

@@ -1044,7 +1044,7 @@ GameObject:
   - component: {fileID: 1245866184}
   m_Layer: 0
   m_Name: PlayerOne
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1057,11 +1057,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1245866177}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.5, y: 0.16, z: 0.2}
+  m_Center: {x: -0.014924735, y: 0, z: 0}
 --- !u!222 &1245866184
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1157,7 +1157,7 @@ GameObject:
   - component: {fileID: 1263975602}
   m_Layer: 0
   m_Name: PlayerTwo
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1199,10 +1199,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1263975600}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16, z: 0.2}
+  m_Size: {x: 0.5, y: 0.16, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1263975604
 SpriteRenderer:
@@ -1618,6 +1618,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player_one: {fileID: 1245866177}
   player_two: {fileID: 1263975600}
+  remaining_players: 2
 --- !u!1 &2116781862
 GameObject:
   m_ObjectHideFlags: 0

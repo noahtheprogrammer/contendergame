@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 9057967136447203832}
   - component: {fileID: 9057967136447203835}
   - component: {fileID: -3957270263262483006}
+  - component: {fileID: -1787550139070240563}
   m_Layer: 0
   m_Name: Barrel
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,3 +129,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 800717a9f961c674d81087def3681100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &-1787550139070240563
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9057967136447203836}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 95a92625d29a0ab4185bf88b347bebc7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

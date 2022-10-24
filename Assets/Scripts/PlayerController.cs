@@ -2,12 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
     // Serializable objects used for individual player controls
     [SerializeField] private GameObject player_one;
     [SerializeField] private GameObject player_two;
+    public int remaining_players = 2;
 
     // Update is called once per frame
     void Update()
@@ -26,6 +28,11 @@ public class PlayerController : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.RightArrow)) {
             player_two.transform.Translate(Vector3.right * Time.deltaTime * 2f);
+        }
+
+        // This checks if any players are left and can change the scene 
+        if (remaining_players == 0) {
+            // SceneManager.LoadScene("Over");
         }
     }
 }
